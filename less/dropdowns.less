@@ -98,11 +98,11 @@
 // ------------
 .dropdown-menu .active > a,
 .dropdown-menu .active > a:hover {
-  color: @dropdownLinkColorHover;
+  color: @dropdownLinkColor;
   text-decoration: none;
   outline: 0;
   background-color: @dropdownLinkBackgroundActive;
-  #gradient > .vertical(@dropdownLinkBackgroundActive, darken(@dropdownLinkBackgroundActive, 5%));
+  #gradient > .vertical(lighten(@dropdownLinkBackgroundActive, 40%), lighten(@dropdownLinkBackgroundActive, 30%));
 }
 
 // Disabled state
