@@ -1,6 +1,6 @@
 /*!
  * Bootstrap v3.0.3 (http://getbootstrap.com)
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2014 Twitter, Inc.
  * Licensed under http://www.apache.org/licenses/LICENSE-2.0
  */
 
@@ -723,7 +723,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
         $('<div class="dropdown-backdrop"/>').insertAfter($(this)).on('click', clearMenus)
       }
 
-      $parent.trigger(e = $.Event('show.bs.dropdown'))
+      $parent.triggerHandler(e = $.Event('show.bs.dropdown'))
 
       if (e.isDefaultPrevented()) return
 
@@ -773,7 +773,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     $(toggle).each(function (e) {
       var $parent = getParent($(this))
       if (!$parent.hasClass('open')) return
-      $parent.trigger(e = $.Event('hide.bs.dropdown'))
+      $parent.triggerHandler(e = $.Event('hide.bs.dropdown'))
       if (e.isDefaultPrevented()) return
       $parent.removeClass('open').trigger('hidden.bs.dropdown')
     })
@@ -1216,7 +1216,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     var e = $.Event('show.bs.'+ this.type)
 
     if (this.hasContent() && this.enabled) {
-      this.$element.trigger(e)
+      this.$element.triggerHandler(e)
 
       if (e.isDefaultPrevented()) return
 
@@ -1344,7 +1344,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
       if (that.hoverState != 'in') $tip.detach()
     }
 
-    this.$element.trigger(e)
+    this.$element.triggerHandler(e)
 
     if (e.isDefaultPrevented()) return
 
