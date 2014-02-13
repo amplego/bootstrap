@@ -495,7 +495,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     if (this.transitioning || this.$element.hasClass('in')) return
 
     var startEvent = $.Event('show.bs.collapse')
-    this.$element.trigger(startEvent)
+    this.$element.triggerHandler(startEvent)
     if (startEvent.isDefaultPrevented()) return
 
     var actives = this.$parent && this.$parent.find('> .panel > .in')
@@ -539,7 +539,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     if (this.transitioning || !this.$element.hasClass('in')) return
 
     var startEvent = $.Event('hide.bs.collapse')
-    this.$element.trigger(startEvent)
+    this.$element.triggerHandler(startEvent)
     if (startEvent.isDefaultPrevented()) return
 
     var dimension = this.dimension()
@@ -667,7 +667,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
       }
 
       var relatedTarget = { relatedTarget: this }
-      $parent.trigger(e = $.Event('show.bs.dropdown', relatedTarget))
+      $parent.triggerHandler(e = $.Event('show.bs.dropdown', relatedTarget))
 
       if (e.isDefaultPrevented()) return
 
@@ -719,7 +719,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
       var $parent = getParent($(this))
       var relatedTarget = { relatedTarget: this }
       if (!$parent.hasClass('open')) return
-      $parent.trigger(e = $.Event('hide.bs.dropdown', relatedTarget))
+      $parent.triggerHandler(e = $.Event('hide.bs.dropdown', relatedTarget))
       if (e.isDefaultPrevented()) return
       $parent.removeClass('open').trigger('hidden.bs.dropdown', relatedTarget)
     })
@@ -821,7 +821,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     var that = this
     var e    = $.Event('show.bs.modal', { relatedTarget: _relatedTarget })
 
-    this.$element.trigger(e)
+    this.$element.triggerHandler(e)
 
     if (this.isShown || e.isDefaultPrevented()) return
 
@@ -869,7 +869,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
 
     e = $.Event('hide.bs.modal')
 
-    this.$element.trigger(e)
+    this.$element.triggerHandler(e)
 
     if (!this.isShown || e.isDefaultPrevented()) return
 
@@ -1149,7 +1149,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     var e = $.Event('show.bs.' + this.type)
 
     if (this.hasContent() && this.enabled) {
-      this.$element.trigger(e)
+      this.$element.triggerHandler(e)
 
       if (e.isDefaultPrevented()) return
       var that = this;
@@ -1298,7 +1298,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
       that.$element.trigger('hidden.bs.' + that.type)
     }
 
-    this.$element.trigger(e)
+    this.$element.triggerHandler(e)
 
     if (e.isDefaultPrevented()) return
 
