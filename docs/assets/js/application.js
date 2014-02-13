@@ -18,14 +18,13 @@
     //
     // See Getting Started docs for more information
     if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-      var msViewportStyle = document.createElement('style');
+      var msViewportStyle = document.createElement('style')
       msViewportStyle.appendChild(
         document.createTextNode(
           '@-ms-viewport{width:auto!important}'
         )
-      );
-      document.querySelector('head').
-        appendChild(msViewportStyle);
+      )
+      document.querySelector('head').appendChild(msViewportStyle)
     }
 
 
@@ -35,7 +34,7 @@
     var navHeight = $('.navbar').outerHeight(true) + 10
 
     $body.scrollspy({
-      target: '.bs-sidebar',
+      target: '.bs-docs-sidebar',
       // offset: navHeight
     })
 
@@ -49,7 +48,7 @@
 
     // back to top
     setTimeout(function () {
-      var $sideBar = $('.bs-sidebar')
+      var $sideBar = $('.bs-docs-sidebar')
 
       $sideBar.affix({
         offset: {
@@ -61,7 +60,7 @@
             return (this.top = offsetTop - navOuterHeight - sideBarMargin)
           },
           bottom: function () {
-            return (this.bottom = $('.bs-footer').outerHeight(true))
+            return (this.bottom = $('.bs-docs-footer').outerHeight(true))
           }
         }
       })
